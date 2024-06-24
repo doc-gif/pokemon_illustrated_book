@@ -38,6 +38,8 @@ dependencies:
   isar: ^3.1.0+1
   freezed: ^2.5.2
   freezed_annotation: ^2.4.1
+  json_serializable: ^6.8.0
+  json_annotation: ^4.9.0
   retrofit: ^4.1.0
   dio: ^5.4.3+1
 
@@ -54,6 +56,8 @@ dev_dependencies:
   isar_generator: ^3.1.0+1
   retrofit_generator: ^8.1.0
   build_runner: any
+  analyzer: any
+  source_gen: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
