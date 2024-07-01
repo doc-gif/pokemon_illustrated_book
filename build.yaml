@@ -1,0 +1,25 @@
+targets:
+  $default:
+    builders:
+      source_gen|combining_builder:
+        generate_for:
+          include:
+            # for freezed
+            - lib/infrastructure/datasource/web_api/model/response/*.dart
+            # for retrofit
+            - lib/infrastructure/datasource/web_api/*.dart
+        options:
+          build_extensions:
+            '^lib/{{path}}/{{file}}.dart': 'lib/{{path}}/generated/{{file}}.g.dart'
+      freezed|freezed:
+        generate_for:
+          include:
+            - lib/infrastructure/datasource/web_api/model/response/*.dart
+        options:
+          build_extensions:
+            'lib/infrastructure/datasource/web_api/model/response/{{}}.dart': 'lib/infrastructure/datasource/web_api/model/response/generated/{{}}.freezed.dart'
+      json_serializable|json_serializable:
+        generate_for:
+          include:
+            # for freezed
+            - lib/infrastructure/datasource/web_api/model/response/*.dart
