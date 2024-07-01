@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../../../util/dio/dio_repository.dart';
 import 'model/response/get_ability_response.dart';
 import 'model/response/get_characteristic_response.dart';
 import 'model/response/get_egg_groups_response.dart';
@@ -19,9 +21,14 @@ import 'model/response/get_type_response.dart';
 
 part 'generated/poke_api.g.dart';
 
+final pokeApiClientProvider = Provider((ref) {
+  final dio = ref.watch(dioRepositoryProvider).dio;
+  return _PokeApiClient(dio);
+});
+
 @RestApi(baseUrl: 'https://pokeapi.co/api/v2')
-abstract class PokeApiClient {
-  factory PokeApiClient(Dio dio, {String baseUrl}) = _PokeApiClient;
+abstract class _PokeApiClient {
+  factory _PokeApiClient(Dio dio, {String baseUrl}) = __PokeApiClient;
 
   @GET('/ability/{id}/')
   Future<GetAbilityResponse> getAbility(@Path('id') int id);
