@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:retrofit/retrofit.dart';
 
-import '../../../util/dio/dio_repository.dart';
+import '../../../../util/dio/dio_repository.dart';
 import 'model/response/get_ability_response.dart';
 import 'model/response/get_characteristic_response.dart';
 import 'model/response/get_egg_groups_response.dart';
@@ -19,7 +19,7 @@ import 'model/response/get_pokemon_specie_response.dart';
 import 'model/response/get_stat_response.dart';
 import 'model/response/get_type_response.dart';
 
-part 'generated/poke_api.g.dart';
+part 'generated/poke_api_impl.g.dart';
 
 final pokeApiClientProvider = Provider((ref) {
   final dio = ref.watch(dioRepositoryProvider).dio;
