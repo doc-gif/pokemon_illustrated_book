@@ -19,7 +19,7 @@ import 'model/response/get_pokemon_specie_response.dart';
 import 'model/response/get_stat_response.dart';
 import 'model/response/get_type_response.dart';
 
-part 'generated/poke_api_impl.g.dart';
+part 'generated/api_impl.g.dart';
 
 final pokeApiClientProvider = Provider((ref) {
   final dio = ref.watch(dioRepositoryProvider).dio;
